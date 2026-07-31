@@ -1,0 +1,98 @@
+/* ==================================================
+   PROJECT OLIVE
+   CLOSING
+   Version : 1.0
+==================================================*/
+
+#closing{
+
+    padding:140px 20px;
+
+
+}
+
+.closing-container{
+
+    max-width:850px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.closing-subtitle{
+
+    color:var(--gold);
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    font-size:15px;
+
+    margin-bottom:20px;
+
+}
+
+#closing h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:54px;
+
+    color:#444;
+
+    line-height:1.3;
+
+    margin-bottom:35px;
+
+}
+
+.closing-text{
+
+    max-width:650px;
+
+    margin:0 auto 60px;
+
+    line-height:2;
+
+    color:#666;
+
+    font-size:17px;
+
+}
+
+.closing-signature h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:44px;
+
+    color:#444;
+
+    font-weight:500;
+
+}
+
+.closing-signature span{
+
+    color:var(--gold);
+
+    margin:0 8px;
+
+}
+
+.closing-signature p{
+
+    margin-top:12px;
+
+    color:#888;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    font-size:14px;
+
+}

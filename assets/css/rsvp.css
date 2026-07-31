@@ -1,0 +1,291 @@
+/* ==================================================
+   PROJECT OLIVE
+   RSVP
+   Version : 1.0
+==================================================*/
+
+#rsvp{
+
+    padding:60px 20px 120px;    
+
+    background:transparent;
+
+}
+
+.rsvp-container{
+
+    max-width:700px;
+
+    margin:auto;
+
+    background:rgba(255,255,255,.25);
+
+    padding:60px;
+
+    border-radius:28px;
+
+    border:1px solid rgba(191,150,86,.20);
+
+    box-shadow:0 15px 45px rgba(0,0,0,.05);
+
+}
+
+.rsvp-subtitle{
+
+    text-align:center;
+
+    color:var(--gold);
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    font-size:15px;
+
+}
+
+#rsvp h2{
+
+    text-align:center;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:54px;
+
+    color:#444;
+
+    margin:20px 0 50px;
+
+}
+
+.form-group{
+
+    margin-bottom:35px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    color:#555;
+
+    font-weight:500;
+
+}
+
+.form-group input[type="text"]{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:1px solid rgba(191,150,86,.18);
+background:rgba(255,255,255,.25);
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:.30s;
+
+}
+
+.form-group input[type="text"]:focus{
+
+    outline:none;
+
+    border-color:var(--gold);
+
+}
+
+.attendance-options{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.radio-card{
+
+    flex:1;
+
+    cursor:pointer;
+
+}
+
+.radio-card input{
+
+    display:none;
+
+}
+
+.radio-card span{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:18px;
+
+    background:rgba(255,255,255,.25);
+
+    border:1px solid rgba(191,150,86,.18);
+
+    border-radius:16px;
+
+    color:#555;
+
+    transition:.30s;
+
+    font-weight:500;
+
+}
+
+.radio-card input:checked + span{
+
+    background:var(--gold);
+
+    color:#555;
+
+    border-color:var(--gold);
+
+}
+
+.guest-counter{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.guest-counter button{
+
+    width:46px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--gold);
+
+    color:555;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.guest-counter button:hover{
+
+    transform:scale(1.05);
+
+}
+
+#guestCountInput{
+
+    width:70px;
+
+    border:none;
+
+    background:transparent;
+
+    text-align:center;
+
+    font-size:32px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:#444;
+
+    pointer-events:none;
+
+}
+
+.rsvp-button{
+
+    width:100%;
+
+    padding:18px;
+
+    background:transparent;
+
+    color:#8b6f47;
+
+    border:1px solid rgba(191,150,86,.45);
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.rsvp-button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(191,150,86,.30);
+
+}
+.rsvp-success{
+
+    display:none;
+
+    margin-top:25px;
+
+    text-align:center;
+
+    padding:24px;
+
+    border:1px solid rgba(191,150,86,.25);
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.35);
+
+    animation:fadeIn .4s ease;
+}
+
+.rsvp-success i{
+
+    font-size:32px;
+
+    color:#bf9656;
+
+    margin-bottom:10px;
+}
+
+.rsvp-success h3{
+
+    margin-bottom:10px;
+
+    color:#8b6a3d;
+}
+
+.rsvp-success p{
+
+    line-height:1.8;
+}
