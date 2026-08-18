@@ -1,44 +1,70 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const music = document.getElementById("bgMusic");
-    const button = document.getElementById("musicToggle");
+    const openingScreen = document.getElementById("openingScreen");
+    const openInvitation = document.getElementById("openInvitation");
+    const musicToggle = document.getElementById("musicToggle");
 
     let playing = false;
 
-    async function startMusic() {
+    // DAVETİYEYİ AÇ
+    openInvitation.addEventListener("click", async () => {
+
         try {
             await music.play();
+
             playing = true;
-            button.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
-        } catch (e) {
-            // Tarayıcı otomatik oynatmaya izin vermedi.
-        }
-    }
 
-    function stopMusic() {
-        music.pause();
-        playing = false;
-        button.innerHTML = '<i class="fa-solid fa-music"></i>';
-    }
+            if (musicToggle) {
+                musicToggle.innerHTML =
+                    '<i class="fa-solid fa-volume-high"></i>';
+            }
 
-    // Masaüstünde otomatik başlatmayı dene
-    startMusic();
-
-    // Mobilde ilk dokunuşta başlat
-    ["click","touchstart","scroll"].forEach(event => {
-        document.addEventListener(event, startMusic, { once:true });
-    });
-
-    button.addEventListener("click", (e) => {
-
-        e.stopPropagation();
-
-        if (playing) {
-            stopMusic();
-        } else {
-            startMusic();
+        } catch (error) {
+            console.log("Müzik başlatılamadı:", error);
         }
 
+        // Açılış kapağını kapat
+        openingScreen.classList.add("hide");
+
     });
+
+
+    // MÜZİK BUTONU
+    if (musicToggle) {
+
+        musicToggle.addEventListener("click", (event) => {
+
+            event.stopPropagation();
+
+            if (playing) {
+
+                music.pause();
+
+                playing = false;
+
+                musicToggle.innerHTML =
+                    '<i class="fa-solid fa-music"></i>';
+
+            } else {
+
+                music.play().then(() => {
+
+                    playing = true;
+
+                    musicToggle.innerHTML =
+                        '<i class="fa-solid fa-volume-high"></i>';
+
+                }).catch(error => {
+
+                    console.log("Müzik başlatılamadı:", error);
+
+                });
+
+            }
+
+        });
+
+    }
 
 });
