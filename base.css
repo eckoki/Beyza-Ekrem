@@ -1,0 +1,466 @@
+    /* ==================================================
+    PROJECT OLIVE
+    BASE
+    ==================================================*/
+
+    /* RESET */
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    html{
+
+        scroll-behavior:smooth;
+
+    }
+
+    body{
+        margin:0;
+        padding:0;
+        font-family:'Poppins',sans-serif;
+        color:#444;
+        overflow-x:hidden;
+
+        background:linear-gradient(
+            180deg,
+            #fffdf9 0%,
+            #fcf8f2 25%,
+            #f8f4ed 60%,
+            #f4eee4 100%
+        );
+    }
+
+    /* ROOT */
+
+    :root{
+
+        --bg-main:#f8f4ed;
+        --card-bg:rgba(255,255,255,.25);
+        --card-border:rgba(191,150,86,.15);
+        --card-shadow:0 15px 40px rgba(0,0,0,.05);
+
+    }
+
+    /* HEADINGS */
+
+    h1,h2,h3,h4{
+
+        font-family:'Cormorant Garamond',serif;
+
+        font-weight:500;
+
+    }
+
+    /* LINKS */
+
+    a{
+
+        text-decoration:none;
+
+        color:inherit;
+
+    }
+
+    /* IMAGES */
+
+    img{
+
+        display:block;
+
+        max-width:100%;
+
+    }
+
+    /* LIST */
+
+    ul{
+
+        list-style:none;
+
+    }
+
+    /* BUTTON */
+
+    button{
+
+        border:none;
+
+        outline:none;
+
+        cursor:pointer;
+
+        font-family:'Poppins',sans-serif;
+
+    }
+
+    /* CONTAINER */
+
+    .container{
+
+        width:min(1200px,92%);
+
+        margin:auto;
+
+    }
+
+    /* SECTION */
+
+    section{
+
+        background:transparent;
+
+    }
+
+    /* TOP MENU */
+
+    .topbar{
+
+        position:fixed;
+
+        top:0;
+
+        left:0;
+
+        width:100%;
+
+        height:55px;
+
+        background:rgba(255,255,255,.82);
+
+        backdrop-filter:blur(10px);
+
+        border-bottom:1px solid rgba(0,0,0,.04);
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        z-index:9999;
+
+    }
+
+    .topbar nav{
+
+        display:flex;
+
+        gap:18px;
+
+    }
+
+    .topbar a{
+
+        font-size:14px;
+
+        color:#777;
+
+        transition:.30s;
+
+    }
+
+    .topbar a:hover{
+
+        color:var(--gold);
+
+    }
+    /* =====================================
+    ORTAK KART TASARIMI
+    ===================================== */
+
+
+    .card{
+        background:rgba(255,255,255,.25);
+        border:1px solid rgba(191,150,86,.15);
+        border-radius:24px;
+        box-shadow:0 15px 40px rgba(0,0,0,.05);
+    }
+    .corner{
+    position:fixed;
+    pointer-events:none;
+    z-index:5;
+    user-select:none;
+}
+
+    .top-left{
+    position:fixed;
+
+    top:40px;      /* aşağı indir */
+    left:1px;    /* biraz dışarı çıkar */
+
+    width:170px;
+}
+
+.bottom-right{
+    position:fixed;
+
+    right:1px;   /* daha köşeye götür */
+    bottom:-30px;
+
+    width:170px;
+}
+.topbar a{
+    position:relative;
+    transition:.3s;
+}
+
+.topbar a.active{
+    color:#b9935a;
+}
+
+.topbar a.active::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    bottom:-8px;
+
+    width:22px;
+    height:1.5px;
+
+    background:#b9935a;
+
+    transform:translateX(-50%);
+    border-radius:20px;
+}
+#backToTop{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#bf9656;
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+    z-index:999;
+}
+
+#backToTop:hover{
+
+    transform:translateY(-3px);
+}
+
+#backToTop.show{
+
+    opacity:1;
+
+    visibility:visible;
+}
+/* ==================================================
+   DAVETİYE AÇILIŞ KAPAĞI
+   ================================================== */
+
+#openingScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(248, 244, 237, 0.88),
+            rgba(248, 244, 237, 0.94)
+        ),
+        url("../images/cover/cover.jpg") center center / cover no-repeat;
+
+    text-align: center;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+/* İçerik */
+
+.opening-content {
+    width: min(90%, 500px);
+    padding: 45px 25px;
+
+    background: rgba(255,255,255,.32);
+
+    border: 1px solid rgba(191,150,86,.25);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.08);
+
+    backdrop-filter: blur(8px);
+
+    animation: openingFadeIn 1.2s ease forwards;
+}
+
+/* Üst yazı */
+
+.opening-small {
+    margin-bottom: 18px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    color: #777;
+}
+
+/* İsimler */
+
+.opening-content h1 {
+
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(45px, 10vw, 72px);
+
+    font-weight: 400;
+
+    letter-spacing: 8px;
+
+    line-height: 1;
+
+    color: #444;
+}
+
+.opening-content h1 span {
+
+    display: block;
+
+    margin: 8px 0;
+
+    font-family: 'Allura', cursive;
+
+    font-size: 42px;
+
+    letter-spacing: 0;
+
+    color: #bf9656;
+}
+
+/* Tarih */
+
+.opening-date {
+
+    margin-top: 22px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 22px;
+
+    letter-spacing: 5px;
+
+    color: #bf9656;
+}
+
+/* Açıklama */
+
+.opening-message {
+
+    margin-top: 25px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    color: #555;
+}
+
+/* Açılış butonu */
+
+#openInvitation {
+
+    margin-top: 32px;
+
+    padding: 14px 28px;
+
+    border: 1px solid rgba(191,150,86,.45);
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.65);
+
+    color: #8d6d3d;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    transition: .3s ease;
+}
+
+#openInvitation i {
+
+    margin-right: 8px;
+}
+
+#openInvitation:hover {
+
+    transform: translateY(-2px);
+
+    background: rgba(255,255,255,.9);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Kapağın kaybolması */
+
+#openingScreen.hide {
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+/* Açılış animasyonu */
+
+@keyframes openingFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
