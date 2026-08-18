@@ -284,23 +284,22 @@
     justify-content: center;
     align-items: center;
 
-    background:
-        linear-gradient(
-            rgba(248, 244, 237, 0.88),
-            rgba(248, 244, 237, 0.94)
-        ),
-        url("../images/cover/cover.jpg") center center / cover no-repeat;
+    background: #f8f4ed;
 
     text-align: center;
 
     opacity: 1;
     visibility: visible;
 
-    transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
-}
+    transform: scale(1);
+    filter: blur(0);
 
+    transition:
+        opacity 1.8s ease,
+        transform 2s ease,
+        filter 1.8s ease,
+        visibility 1.8s ease;
+}
 /* İçerik */
 
 .opening-content {
@@ -441,12 +440,18 @@
 /* Kapağın kaybolması */
 
 #openingScreen.hide {
-
     opacity: 0;
-
     visibility: hidden;
-
     pointer-events: none;
+
+    transform: scale(1.03);
+    filter: blur(5px);
+
+    transition:
+        opacity 1.8s ease,
+        transform 2s ease,
+        filter 1.8s ease,
+        visibility 1.8s ease;
 }
 
 /* Açılış animasyonu */
